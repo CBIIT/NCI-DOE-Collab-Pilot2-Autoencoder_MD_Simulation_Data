@@ -16,7 +16,7 @@ Molecular simulation data consist of many descriptors. This capability shows how
 * Data:
   * The default dataset (3k disordered 3-component-system [DPPC-DOPC-CHOL]) used for this asset is stored in [MoDaC](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7654212).
 * Model:
-  * The trained weights (for both the full model and just the encoder; `.hdf5` files) and the corresponding model topology (`.json` files) are stored in [MoDaC](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7681692).
+  * The trained weights (for both the full model and just the encoder; `.hdf5` files) and the corresponding model topologies (`.json` files) are stored in [MoDaC](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7681692).
 
 ### Technical Details:
 Refer to this [README](./Pilot2/P2B1/README.md).
