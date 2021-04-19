@@ -1,24 +1,22 @@
-# Benchmarks
-ECP-CANDLE Benchmarks
+# NCI-DOE-Collab-Pilot2-Autoencoder_MD_Simulation_Data
 
+### Description:
+The P2B1 capability (P2B1) is an autoencoder that determines a set of features to most efficiently describe molecular dynamics simulation data.
 
-This repository contains the CANDLE benchmark codes. These codes implement deep learning architectures that are relevant to problems in cancer. These architectures address problems at different biological scales, specifically problems at the molecular, cellular and population scales.
+### User Community:	
+Researchers interested in working with efficient representations of molecular dynamics simulation data.
 
-The naming conventions adopted reflect the different biological scales.
+### Usability:	
+Data scientists can train the model on their own data and use the resulting reduced set of features as input for further analysis.
 
-Pilot1 (P1) benchmarks are formed out of problems and data at the cellular level. The high level goal of the problem behind the P1 benchmarks is to predict drug response based on molecular features of tumor cells and drug descriptors.
+### Uniqueness:	
+Molecular simulation data consist of many descriptors. This capability shows how you can use an autoencoder to compress these descriptors into a minimal set of descriptors that faithfully describe the data. This enables downstream analysis using a more tractable dataset as input.
 
-Pilot2 (P2) benchmarks are formed out of problems and data at the molecular level. The high level goal of the problem behind the P2 benchmarks is molecular dynamic simulations of proteins involved in cancer, specifically the RAS protein.
+### Components:	
+* Data:
+  * The default dataset (3k disordered 3-component-system [DPPC-DOPC-CHOL]) used for this asset is stored in [MoDaC](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7654212).
+* Model:
+  * The trained weights (for both the full model and just the encoder; `.hdf5` files) and the corresponding model topology (`.json` files) are stored in [MoDaC](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7681692).
 
-Pilot3 (P3) benchmarks are formed out of problems and data at the population level. The high level goal of the problem behind the P3 benchmarks is to predict cancer recurrence in patients based on patient related data.
-
-Each of the problems (P1,P2,P3) informed the implementation of specific benchmarks, so P1B3 would be benchmark three of problem 1.
-At this point, we will refer to a benchmark by it's problem area and benchmark number. So it's natural to talk of the P1B1 benchmark. Inside each benchmark directory, there exists a readme file that contains an overview of the benchmark, a description of the data and expected outcomes along with instructions for running the benchmark code.
-
-Over time, we will be adding implementations that make use of different tensor frameworks. The primary (baseline) benchmarks are implemented using keras, and are named with '_baseline' in the name, for example p3b1_baseline_keras2.py. 
-
-Implementations that use alternative tensor frameworks, such as mxnet or neon, will have the name of the framework in the name. Examples can be seen in the P1B3 benchmark contribs/ directory, for example:
-        p1b3_mxnet.py
-        p1b3_neon.py
-
-Documentation: https://ecp-candle.github.io/Candle/html/readme.html
+### Technical Details:
+Refer to this [README](./Pilot2/P2B1/README.md).
