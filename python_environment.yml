@@ -1,0 +1,8 @@
+name: p2b1
+dependencies:
+  - python=3.7.5
+  - scipy=1.5.3
+  - keras=2.4.3
+  - h5py=2.10.0
+  - numpy=1.19.5
+  - tensorflow-gpu=2.2.0
