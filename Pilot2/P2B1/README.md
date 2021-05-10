@@ -26,7 +26,7 @@ Using the default test dataset (`3k_Disordered`), running the model will take a 
 sinteractive --gres=gpu:k80:1 --mem=150G
 ```
 
-As of April 2021, the default Python environment on Biowulf is sufficient for running the model; you can load this using:
+As of May 2021, the default Python environment on Biowulf is sufficient for running the model; you can load this using:
 
 ```bash
 # On Biowulf
