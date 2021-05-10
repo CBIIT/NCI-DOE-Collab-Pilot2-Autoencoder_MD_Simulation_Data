@@ -10,7 +10,7 @@ Researchers interested in working with efficient representations of molecular dy
 Data scientists can train the model on their own data and use the resulting reduced set of features as input for further analysis.
 
 ### Uniqueness:	
-Molecular simulation data consist of many descriptors. This capability shows how you can use an autoencoder to compress these descriptors into a minimal set of descriptors that faithfully describe the data. This enables downstream analysis using a more tractable dataset as input.
+Molecular simulation data consist of many descriptors. This capability shows how you can use an autoencoder to compress these descriptors into a minimal set that faithfully describes the data. This enables downstream analysis using a more tractable dataset as input.
 
 ### Components:	
 * Data:
