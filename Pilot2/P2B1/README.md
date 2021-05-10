@@ -8,7 +8,7 @@ Feel free to examine on [MoDaC](https://modac.cancer.gov) the [default dataset u
 
 ## Setup
 
-First, clone this repository to your machine. If you use [NIH's Biowulf supercomputer](https://hpc.nih.gov), be sure to us the data partition. For example:
+First, clone this repository to your machine. If you use [NIH's Biowulf supercomputer](https://hpc.nih.gov), be sure to use the data partition. For example:
 
 ```bash
 # On Biowulf, be sure to use the data partition
