@@ -103,7 +103,14 @@ def get_list_of_data_files(GP):
     data_hash = p2.data_sets[GP['set_sel']][1]
     print('Reading Data Files... %s->%s' % (GP['set_sel'], data_set))
     # Check if the data files are in the data director, otherwise fetch from FTP
-    data_file = candle.fetch_file('http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot2/' + data_set + '.tar.gz', untar=True, subdir='Pilot2')
+
+    # Reading the data from the DOE
+    # data_file = candle.fetch_file('http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot2/' + data_set + '.tar.gz', untar=True, subdir='Pilot2')
+
+    # Reading the data from MoDaC
+    # Perhaps in the future, change the name and URL of the asset, "3k_run10_10us__35fs-DPPC__10-DOPC__70-CHOL__20", in MoDaC to be more general, since right now I believe it refers specifically to the "3k_run10_10us.35fs-DPPC.10-DOPC.70-CHOL.20.dir" dataset
+    data_file = candle.fetch_file('https://modac.cancer.gov/api/v2/dataObject/NCI_DOE_Archive/JDACS4C/JDACS4C_Pilot_2/3k_run10_10us__35fs-DPPC__10-DOPC__70-CHOL__20/' + data_set + '.tar.gz', untar=True, subdir='Pilot2')
+
     data_dir = os.path.join(os.path.dirname(data_file), data_set)
     # Make a list of all of the data files in the data set
     data_files = glob.glob('%s/*.npz' % data_dir)
