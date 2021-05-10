@@ -7,3 +7,10 @@ dependencies:
   - numpy=1.19.5
   - tensorflow-gpu=2.2.0
   - pandas=1.2.0
+  - scikit-learn=0.24.0
+  - tqdm=4.56.0
+  - matplotlib=3.3.3
+  - numba=0.52.0
+  - astropy=4.2
+  - patsy=0.5.1
+  - statsmodels=0.12.1
