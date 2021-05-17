@@ -1,10 +1,12 @@
+# NCI-DOE-Collab-Pilot1-Tumor_Classifier Technical README
+
 ## Overview
 
 An autoencoder is a neural network that reduces its inputs to a smaller set of features ("encoder" part) and subsequently builds the features back up ("decoder" part) from the minimally-sized "latent space" while attempting to accurately recreate the inputs. As long as the "reconstruction loss" is small, the encoder part of the model can be trusted to perform just the reduction part of the algorithm in order to minimize the number of "features" of the input data necessary to faithfully describe the input data. Thus, an autoencoder is often used as a dimensionality reduction model. Often the utility of such dimensionality reduction algorithms is to generate from a large input dataset a tractable set of features that you can then feed into additional models used for a variety of purposes; this was the original intent of the P2B1 benchmark.
 
 The P2B1 benchmark performs these steps on a molecular dyanmics simulation state (including PDB files resulting from a coarse-grained bead simulation) of a "disordered," three-component system (DPPC-DOPC-CHOL). The default system consists of 3,000 lipids and 3,000 frames simulated for 10 microseconds. The implemented network is a convolutional neural network that very quickly effectively minimizes the reconstruction loss. See [here](./p2b1_sample_output.txt) ("Model Summary" section) for a detailed description of the autoencoder model used.
 
-Feel free to examine on [MoDaC](https://modac.cancer.gov) the [default dataset used](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7654212) and the[ converged model](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7681692) without having to run the  model.
+Feel free to examine on [MoDaC](https://modac.cancer.gov) the [default dataset used](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7654212) and the[converged model](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7681692) without having to run the  model.
 
 ## Setup
 
@@ -39,6 +41,8 @@ If you are not on Biowulf--or the default Python environment on Biowulf does not
 conda env create -f python_environment.yml -n P2B1
 conda activate P2B1
 ```
+
+Note that in order to download the data the model uses for training (below), it is required to have an account created on the [Model and Data Clearinghouse](https://modac.cancer.gov). Create an account [here](https://modac.cancer.gov/loginTab), and when prompted during the training procedure (below), enter your MoDaC credentials.
 
 ## Training
 
