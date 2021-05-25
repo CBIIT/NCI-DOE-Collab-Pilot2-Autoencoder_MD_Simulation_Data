@@ -4,9 +4,7 @@
 
 An autoencoder is a neural network that reduces its inputs to a smaller set of features ("encoder" part) and subsequently builds the features back up ("decoder" part) from the minimally-sized "latent space" while attempting to accurately recreate the inputs. As long as the "reconstruction loss" is small, the encoder part of the model can be trusted to perform just the reduction part of the algorithm in order to minimize the number of "features" of the input data necessary to faithfully describe the input data. Thus, an autoencoder is often used as a dimensionality reduction model. Often the utility of such dimensionality reduction algorithms is to generate from a large input dataset a tractable set of features that you can then feed into additional models used for a variety of purposes; this was the original intent of the P2B1 benchmark.
 
-&#x1F534;_**(Question: Does the audience already know what PDB means? And DPPC-DOPC-CHOL?)**_
-
-The P2B1 benchmark performs these steps on a molecular dynamics (MD) simulation state (including PDB files resulting from a coarse-grained bead simulation) of a "disordered," three-component system (DPPC-DOPC-CHOL). The default system consists of 3,000 lipids and 3,000 frames simulated for 10 microseconds. The implemented network is a convolutional neural network that very quickly and effectively minimizes the reconstruction loss. For a detailed description of the autoencoder model used, refer to the "Model Summary" section of [p2b1_sample_output.txt](./p2b1_sample_output.txt).
+The P2B1 benchmark performs these steps on a molecular dynamics (MD) simulation state (including Protein Data Bank files resulting from a coarse-grained bead simulation) of a "disordered," three-component system (DPPC-DOPC-CHOL). The default system consists of 3,000 lipids and 3,000 frames simulated for 10 microseconds. The implemented network is a convolutional neural network that very quickly and effectively minimizes the reconstruction loss. For a detailed description of the autoencoder model used, refer to the "Model Summary" section of [p2b1_sample_output.txt](./p2b1_sample_output.txt).
 
 If you want to examine the data without having to run the model, refer to the following assets in the Model and Data Clearinghouse (MoDaC):
 * The default dataset is [3k disordered 3-component-system (DPPC-DOPC-CHOL)](https://modac.cancer.gov/searchTab?dme_data_id=NCI-DME-MS01-7654212).
@@ -14,7 +12,7 @@ If you want to examine the data without having to run the model, refer to the fo
 
 ## Setup
 
-First, clone this repository to your machine. If you use [NIH's Biowulf supercomputer](https://hpc.nih.gov), be sure to use the data partition. For example:
+Clone this repository to your machine. If you use [NIH's Biowulf supercomputer](https://hpc.nih.gov), be sure to use the data partition. For example:
 
 ```bash
 # On Biowulf, be sure to use the data partition
@@ -25,7 +23,7 @@ git clone git@github.com:CBIIT/NCI-DOE-Collab-Pilot2-Autoencoder_MD_Simulation_D
 cd NCI-DOE-Collab-Pilot2-Autoencoder_MD_Simulation_Data
 ```
 
-Using the default test dataset (`3k_Disordered`), running the model requires a large amount of memory, likely over 100 GB. It is therefore prudent to use a large-memory computer or Biowulf. For example, to test the model using an interactive node on Biowulf, you should allocate a node using something like:
+Using the default test dataset (`3k_Disordered`), running the model requires a large amount of memory, likely over 100 GB. It is therefore prudent to use a large-memory computer or Biowulf. For example, to test the model using an interactive node on Biowulf, allocate a node as in the following example:
 
 ```bash
 # On Biowulf
@@ -39,14 +37,17 @@ As of May 2021, the default Python environment on Biowulf is sufficient for runn
 module load python
 ```
 
-If you are not on Biowulf--or the default Python environment on Biowulf does not seem to work--you can instead create a sufficient Python environment by installing the [Conda environment manager](https://docs.conda.io/en/latest) and then running:
+If you are not on Biowulf--or the default Python environment on Biowulf is out of date--you can instead create a sufficient Python environment by installing the [Conda environment manager](https://docs.conda.io/en/latest) and then running:
 
 ```bash
 conda env create -f python_environment.yml -n P2B1
 conda activate P2B1
 ```
 
-Note that in order to download the data the model uses for training (below), it is required to have an account created on MoDaC. Create an account on the [MoDaC login page](https://modac.cancer.gov/loginTab), and when prompted during the training procedure (below), enter your MoDaC credentials.
+To download the data the model uses for training:
+1.	Create an account on the Model and Data Clearinghouse (MoDaC) [login page](https://modac.cancer.gov/loginTab).
+2.	Follow the instructions in the Training section below.
+3.	When prompted during the training procedure, enter your MoDaC credentials.
 
 ## Training
 
