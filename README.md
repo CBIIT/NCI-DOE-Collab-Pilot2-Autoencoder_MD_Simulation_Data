@@ -4,11 +4,10 @@
 The P2B1 capability (P2B1) is an autoencoder that determines a set of features to most efficiently describe molecular dynamics (MD) simulation data.
 
 ### User Community
-Researchers interested in working with efficient representations of MD simulation data.
+Scientists interested in working with efficient representations of MD simulation data.
 
 ### Usability
-Data scientists can train the model on their own data and use the resulting reduced set of features as input for further analysis.
-&#x1F534;_**(Question: Is it okay that the previous section says "Researchers" and this section says "Data scientists"?)**_
+Scientists can train the model on their own data and use the resulting reduced set of features as input for further analysis.
 
 ### Uniqueness
 MD simulation data consist of many descriptors. This capability shows how you can use an autoencoder to compress these descriptors into a minimal set that faithfully describes the data. This enables downstream analysis using a more tractable dataset as input.
