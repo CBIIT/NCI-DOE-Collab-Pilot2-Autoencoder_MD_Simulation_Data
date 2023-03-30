@@ -48,9 +48,9 @@ additional_definitions = [
     {'name': 'l2_reg', 'help': 'Regularization parameter', 'type': float, 'default': None},
     {'name': 'molecular_nbrs', 'help': 'Data dimension for molecular autoencoder', 'type': int, 'default': None},
     {'name': 'molecular_nonlinearity', 'help': 'Activation for molecular netowrk', 'type': str, 'default': None},
-    {'name': 'molecular_num_hidden', 'nargs': '+', 'help': 'Layer sizes for molecular network', 'type': int, 'default': None},
+    {'name': 'molecular_num_hidden', 'nargs': '+', 'help': 'Layer sizes for molecular network', 'type': int},
     {'name': 'noise_factor', 'help': 'Noise factor', 'type': float, 'default': None},
-    # {'name': 'num_hidden', 'nargs': '+', 'help': 'Dense layer specification', 'type': int, 'default': None},
+    # {'name': 'num_hidden', 'nargs': '+', 'help': 'Dense layer specification', 'type': int},
     {'name': 'sampling_density', 'help': 'Sampling density', 'type': float, 'default': None}
 ]
 
