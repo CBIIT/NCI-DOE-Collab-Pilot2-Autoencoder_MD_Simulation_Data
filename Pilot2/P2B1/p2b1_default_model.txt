@@ -1,9 +1,9 @@
 [Global_Params]
-num_hidden=[512,32]
+#num_hidden=[512,32]
 batch_size=64
 learning_rate=0.01
 epochs=2
-cool=False
+#cool=False
 l2_reg=0.01
 noise_factor=0.0
 optimizer='adam'
